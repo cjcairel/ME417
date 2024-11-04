@@ -4,6 +4,8 @@ from scipy.integrate import solve_ivp
 from mpl_toolkits.mplot3d import Axes3D
 import Z_Every_Function as F
 
+#This does not work yet 
+
 def ME317_Assignment_trace_circle():
     # Define link vectors 
     link_vectors = [np.array([[1], [0], [0]]), 
@@ -16,6 +18,8 @@ def ME317_Assignment_trace_circle():
     # Define the function to trace a circle in the y-z plane
     shape_to_draw = lambda t: F.circle_x(t) * 0.5
 
+#trying functions vs J = lambda alpha: arm_Jacobian(link_vectors, alpha, joint_axes, len(link_vectors)) syntax
+    
     # Jacobian as a separate function
     def compute_jacobian(alpha):
         return F.arm_Jacobian(link_vectors, alpha, joint_axes, len(link_vectors))
